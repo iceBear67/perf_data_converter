@@ -34,6 +34,9 @@ jobs:
 
       - name: Build
         run: bazel build //src:all //src/quipper:all
+      - uses: actions/upload-artifact@v4
+        with:
+          path: bazel-bin
 
       - name: Test
         run: bazel test //src:all //src/quipper:all
